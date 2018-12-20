@@ -26,6 +26,13 @@ class MyRowWidget extends StatelessWidget{
     return new Row(
       children: <Widget>[
 
+        new RaisedButton(//不加Expanded可自定义大小,剩下的平均充满
+          onPressed: (){},
+          splashColor: Colors.orange,//按钮按下颜色
+          color: Colors.blue,
+          child: new Text("blue Button"),
+        ),
+
         Expanded(//水平充满,如果只有一个,一个横向充满,两个两个横向充满
           child:  new RaisedButton(
             onPressed: (){},
