@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/**
+ 横向竖向列表
+ */
 void main() => runApp(MyApp(
   items: new List<String>.generate(100, (i)=>"Item $i"),
 
@@ -27,14 +30,54 @@ class MyApp extends StatelessWidget{
         appBar: new AppBar(
           title: new Text("listview"),
         ),
-        body:new ListView.builder(
-          itemCount: items.length,
-            itemBuilder: (context,index)
-        {
-          return new ListTile(
-            title: new Text('${items[index]}'),
-          );
-        })
+
+          body:Container(
+            height: 200,
+            color: Colors.brown,
+            child:  new ListView(
+              scrollDirection: Axis.horizontal,//关键代码横向列表
+              children: <Widget>[
+                new Container(
+                  width: 180.0,
+                  color: Colors.green,
+                ),
+                new Container(
+                  width: 180.0,
+                  color: Colors.blue,
+                ),
+                new Container(
+                  width: 180.0,
+                  color: Colors.white,
+                ),
+                new Container(
+                  width: 180.0,
+                  color: Colors.red,
+                ),
+              ],
+            ),
+          )
+
+
+
+
+
+//        body:new ListView.builder(//默认竖向
+//          itemCount: items.length,
+//            itemBuilder: (context,index)
+//        {
+//          return new ListTile(
+//            title: new Text('${items[index]}'),
+//          );
+//        })
+
+
+
+
+
+
+
+
+
       ),
     );
   }
