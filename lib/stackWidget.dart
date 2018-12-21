@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 void main()=>runApp(MyStackApp());
 /**
  * 层叠布局
+ * 有两个以上用Positioned,只有两个可以随便用
  */
 class MyStackApp extends StatelessWidget {
   @override
@@ -20,14 +21,28 @@ class MyStackApp extends StatelessWidget {
         radius: 100.0,//弧度
       ),
     ),
+      
+    new Positioned(//
+        top: 10.0,//上边距
+        left: 20.0,//左边距
+        child: new Text("永远年轻",style:TextStyle(color: Colors.white))),
 
-        Container(
-          decoration: BoxDecoration(//背景
-            color: Colors.orange,
-          ),
-          padding: EdgeInsets.all(10.0),//边距
-          child: Text('永远年轻,永远热泪盈眶'),
-        )
+  new Positioned(
+        top: 150.0,//上边距
+        left: 40.0,//左边距
+        child: new Text("永远热泪盈眶",style:TextStyle(color: Colors.green)))
+
+
+//        Container(//
+//          decoration: BoxDecoration(//背景
+//            color: Colors.orange,
+//          ),
+//          padding: EdgeInsets.all(10.0),//边距
+//          child: Text('永远年轻,永远热泪盈眶'),
+//        ),
+//        
+
+
       ],
     );
 
